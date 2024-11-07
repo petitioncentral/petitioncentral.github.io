@@ -3,8 +3,10 @@ var ua = detect.parse(navigator.userAgent);
 if(ua.browser.family==="Chrome"){
     $("#notchrome").hide()
     
-} else{
+} else{ 
+    alert("Hey use chrome!")
     $("#chrome").hide()
+    $("#notchrome").show()
 }
 function onButton(id){
 $("#"+id).on("click",function(){
@@ -12,6 +14,7 @@ $("#"+id).on("click",function(){
     window.location.href="petition.html"
 })
 }
+alert(ua.browser.family)
 //  GET request using fetch()
 fetch("https://getpantry.cloud/apiv1/pantry/e538f229-8b8d-43ec-bf6f-945f5b441cf6/basket/Petitions")
   

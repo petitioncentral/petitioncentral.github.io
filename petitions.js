@@ -33,10 +33,12 @@ alert(ua.browser.family)
             console.log(response);
          y= response;
          for(var i = 0; i<y.pets.length;i++){
-            $("#pets").append("<button id ='pet"+i+"'>"+y.pets[i].title+"</button>")
+            $("#pets").append("<button class='buttons' id ='pet"+i+"'>"+y.pets[i].title+"</button>")
+            var z=y.pets[i]
             $("#pet"+i).on("click",function(){
+              
                 localStorage.setItem("petcenid",i)
-                window.location.href="petition.html?title=BOB"
+                window.location.href="petition.html?title="+encodeURI(z.title)+"&ps="+encodeURI(z.ps)+"&topdsc="+encodeURI(z.topdsc)+"&maindsc="+encodeURI(z.maindsc)+"&id="+i
                 console.log("clicked") 
             })
            }
